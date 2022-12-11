@@ -20,7 +20,6 @@ with open('input') as input:
             if I == 'noop':
                   V = None
             else:
-                  print(I)
                   V = int(I.split(' ')[1])
             signal_strength += [cycle * X]
             cycle += 1
@@ -31,11 +30,7 @@ with open('input') as input:
                   draw_to_monitor(cycle - 2, X)
                   X += V
 
-      print(signal_strength[20], signal_strength[60], signal_strength[100], signal_strength[140], signal_strength[180], signal_strength[220])
-      print(sum([signal_strength[20], signal_strength[60], signal_strength[100], signal_strength[140], signal_strength[180], signal_strength[220]]))
-
-      CRT = [''.join(line) for line in CRT]   
+with open('output', 'w') as output:
+      output.write( str(sum([signal_strength[20], signal_strength[60], signal_strength[100], signal_strength[140], signal_strength[180], signal_strength[220]])) + '\n')
       for line in CRT:
-            print(line)
-#with open('output', 'w') as output:
-#      output.write( str(rope_visited(2)) + '\n' + str(rope_visited(10)) +'\n')
+            output.write(''.join(line) + '\n')
