@@ -35,8 +35,6 @@ with open('input') as input:
       packets.sort(key=cmp_to_key(compare_packets), reverse=True)
       decoder_key = (packets.index([[2]])+1) * (packets.index([[6]])+1)
 
-
-      
 with open('output', 'w') as output:
       output.write(str(sum_ordered_packets) + '\n')
       output.write(str(decoder_key) + '\n')
